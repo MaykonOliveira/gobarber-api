@@ -23,13 +23,12 @@
     "eslint-plugin-standard": "^4.0.0",
     "nodemon": "^1.18.10",
     "prettier": "^1.16.4",
-    "rimraf": "^2.6.3",
     "sucrase": "^3.10.0",
     "typescript": "^3.3.3333"
   },
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "prebuild": "rimraf dist",
+    "dev:debug": "nodemon --inspect src/server.js",
     "build": "sucrase ./src -d ./dist --transforms typescript,imports"
   }
 }
