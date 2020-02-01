@@ -13,8 +13,10 @@ class Database {
   }
 
   init() {
-    this.connect = new Sequelize(databaseConfig);
-    models.map(model => model.init(this.connect));
+    this.connection = new Sequelize(databaseConfig);
+    models
+      .map(model => model.init(this.connection))
+      .map(model => model.associete && model.associete(this.connection.models));
   }
 }
 
